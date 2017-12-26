@@ -38,7 +38,6 @@ namespace BLL
             var products = _unitOfWork.ProductRepository.GetAll().ToList();
             if (products.Any())
             {
-                //Mapper.CreateMap<Product, ProductDto>();
                 var productsModel = Mapper.Map<List<Product>, List<ProductDto>>(products);
                 return productsModel;
             }
