@@ -12,6 +12,9 @@ namespace ArchitectureOfWebApi2
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            //initialise Unity container and register and resolve
+            UnityConfig.RegisterComponents();
         }
     }
 }

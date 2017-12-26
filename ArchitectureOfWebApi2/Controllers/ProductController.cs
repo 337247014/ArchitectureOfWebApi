@@ -13,9 +13,9 @@ namespace ArchitectureOfWebApi2.Controllers
     {
         private readonly IProductServices _productServices;
 
-        public ProductController()
+        public ProductController(IProductServices productServices)
         {
-            _productServices = new ProductServices();
+            _productServices = productServices;
         }
 
         // GET api/product

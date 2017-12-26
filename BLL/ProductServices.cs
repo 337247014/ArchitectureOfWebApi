@@ -13,9 +13,9 @@ namespace BLL
     public class ProductServices : IProductServices
     {
         private readonly UnitOfWork _unitOfWork;
-        public ProductServices()
+        public ProductServices(UnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
         }
 
         public ProductDto GetProductById(int productId)
@@ -24,7 +24,10 @@ namespace BLL
             if (product != null)
             {
                 //here, make use of AutoMapper plugin to do Object-Object Mapping between Dto and Model
-                var productModel = Mapper.Map<Product, ProductDto>(product);
+                //var productModel = Mapper.Map<Product, ProductDto>(product);
+                var productModel = new ProductDto();
+                productModel.ProductId = product.ProductId;
+                productModel.ProductName = product.ProductName;
                 return productModel;
             }
             return null;
@@ -35,6 +38,7 @@ namespace BLL
             var products = _unitOfWork.ProductRepository.GetAll().ToList();
             if (products.Any())
             {
+                //Mapper.CreateMap<Product, ProductDto>();
                 var productsModel = Mapper.Map<List<Product>, List<ProductDto>>(products);
                 return productsModel;
             }

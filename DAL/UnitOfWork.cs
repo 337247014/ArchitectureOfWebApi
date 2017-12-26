@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class UnitOfWork:IDisposable
+    public class UnitOfWork: IDisposable
     {
         private MyDBEntities _context = null;
         private GenericRepository<User> _userRepository;
