@@ -1,11 +1,11 @@
 # ArchitectureOfWebApi
 
---Day 1-------------------
+--Day 1-------------------<br/>
   1.set up Data Access Layer with <b>Entity Framework , GenericRepository pattern and Unit Of Work</b><br/>
-  2.set up BLL with service, Using <b>AutoMapper</b> which is third-part library (Oriented-Object-Mapping) and used to transfer DB Model to DTO automatically
+  2.set up BLL with service, Using <b>AutoMapper</b> which is third-part library (Oriented-Object-Mapping) and used to transfer DB Model to DTO automatically<br/>
   3.set up web api to do simple CRUD
 
---Day 2--------------------
+--Day 2--------------------<br/>
   IOC and DI -- Unity IOC Container
   1. install package with Nuget
      <b>Install-Package Unity.Webapi</b> this is for api
